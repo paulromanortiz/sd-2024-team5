@@ -1,0 +1,41 @@
+git clone <repository-url>
+cd <repository-folder>
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
+pip install django django-allauth
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
+myproject/
+│
+├── main/                      # Main Django app
+│   ├── migrations/            # Database migrations
+│   ├── templates/             # HTML templates
+│   │   └── main/              # Templates specific to the main app
+│   │       ├── home.html      # Home page template
+│   │       └── dashboard.html # Dashboard template
+│   ├── static/                # Static files (CSS, JS)
+│   ├── views.py               # View logic for the app
+│   ├── urls.py                # App URL configuration
+│
+├── myproject/                 # Main project folder
+│   ├── settings.py            # Project settings
+│   ├── urls.py                # Project URL configuration
+│
+└── manage.py                  # Django management script
+1 Home Page:
+Open http://127.0.0.1:8000 to see the home page. You can access links to Login, Signup, and Dashboard.
+
+2 Admin Panel:
+Visit http://127.0.0.1:8000/admin to manage the site using the superuser account.
+
+3 Dashboard:
+After logging in, go to the dashboard at http://127.0.0.1:8000/dashboard to see notifications and other protected content.
+python manage.py makemigrations
+python manage.py migrate
+python manage.py makemigrations
+python manage.py migrate
+python manage.py createsuperuser
+https://github.com/elisaulvazquezpedraza/sd-2024-team5?tab=readme-ov-file#usage
+
