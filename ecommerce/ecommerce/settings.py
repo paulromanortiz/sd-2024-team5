@@ -37,6 +37,10 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'catalogo',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +125,17 @@ STATIC_URL = "static/"
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+AUTHENTICATION_BACKENDS = (
+'django.contrib.auth.backends.ModelBackend',
+'allauth.account.auth_backends.AuthenticationBackend',
+)
+
+SITE_ID = 1
+LOGIN_REDIRECT_URL = '/' # Redirect users after login
+LOGOUT_REDIRECT_URL = '/' # Redirect users after logout
+ [
+path('admin/', admin.site.urls),
+path('accounts/', include('allauth.urls')), # Allauth authentication
+path('', include('main.urls')), # Main app URLs
