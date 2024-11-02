@@ -51,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "allauth.account.middleware.AccountMiddleware"
 ]
 
 ROOT_URLCONF = "ecommerce.urls"
@@ -135,7 +136,3 @@ AUTHENTICATION_BACKENDS = (
 SITE_ID = 1
 LOGIN_REDIRECT_URL = '/' # Redirect users after login
 LOGOUT_REDIRECT_URL = '/' # Redirect users after logout
- [
-path('admin/', admin.site.urls),
-path('accounts/', include('allauth.urls')), # Allauth authentication
-path('', include('main.urls')), # Main app URLs
